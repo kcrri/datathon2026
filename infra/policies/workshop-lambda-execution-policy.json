@@ -1,0 +1,68 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadPortfolioGuardDataset",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion"
+      ],
+      "Resource": "arn:aws:s3:::portfolioguard-workshop-data-<ACCOUNT_ID>-us-east-1/starter/v1/*"
+    },
+    {
+      "Sid": "WritePortfolioGuardLambdaLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:us-east-1:<ACCOUNT_ID>:log-group:/aws/lambda/portfolioguard-workshop-financial-tools:*"
+    },
+    {
+      "Sid": "ReadSimulatedMarketData",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion"
+      ],
+      "Resource": "arn:aws:s3:::portfolioguard-workshop-data-<ACCOUNT_ID>-us-east-1/simulated/v1/*"
+    },
+    {
+      "Sid": "WriteScoredHeadlinesOnly",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::portfolioguard-workshop-data-<ACCOUNT_ID>-us-east-1/simulated/v1/current/news_scored.csv",
+        "arn:aws:s3:::portfolioguard-workshop-data-<ACCOUNT_ID>-us-east-1/simulated/v1/marketchange/news_scored.csv"
+      ]
+    },
+    {
+      "Sid": "InvokeNovaLiteInferenceProfile",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModel"
+      ],
+      "Resource": "arn:aws:bedrock:us-east-1:<ACCOUNT_ID>:inference-profile/us.amazon.nova-lite-v1:0"
+    },
+    {
+      "Sid": "InvokeNovaLiteDestinationModels",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModel"
+      ],
+      "Resource": [
+        "arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-lite-v1:0",
+        "arn:aws:bedrock:us-east-2::foundation-model/amazon.nova-lite-v1:0",
+        "arn:aws:bedrock:us-west-2::foundation-model/amazon.nova-lite-v1:0"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "bedrock:InferenceProfileArn": "arn:aws:bedrock:us-east-1:<ACCOUNT_ID>:inference-profile/us.amazon.nova-lite-v1:0"
+        }
+      }
+    }
+  ]
+}

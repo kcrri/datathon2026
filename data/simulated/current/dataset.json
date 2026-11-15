@@ -1,0 +1,9 @@
+{
+  "dataset_id": "current-simulation-v1",
+  "description": "The investor's present situation, before any market change.",
+  "window": [
+    "2026-08-20",
+    "2026-11-12"
+  ],
+  "prices": "real starter prices; news is simulated"
+}

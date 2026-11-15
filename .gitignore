@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Node
+node_modules/
+.next/
+out/
+
+# Data (see data/README.md)
+data/*.csv
+data/*.parquet
+
+# AWS local state and credentials
+.aws/
+.aws-sam/
+infra/samconfig.toml
+
+# OS
+.DS_Store
+
+# Runtime state written by the app (admin feature flags)
+backend/.runtime/
+
+# Datathon project specification file
+datathon_Project_Spec/
+
+# Build output
+.build/

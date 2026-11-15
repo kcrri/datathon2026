@@ -1,0 +1,16 @@
+date,ticker,headline,scope,label_scope,sentiment,model_id,source
+2026-11-13,QQQ,Global equities slide as fears over interest rates resurface,market,market,-0.8,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-13,NVDA,Tech selloff deepens; investors dump high-valuation stocks,market,market,-0.8,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-13,SPY,Wall Street suffers worst day in months amid broad risk-off mood,market,market,-0.8,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-13,SHOP.TO,Canadian growth stocks fall in sympathy with global tech rout,market,market,-0.7,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-16,QQQ,Volatility index jumps as traders rush to cut risk,market,market,-0.5,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-17,NVDA,"Analysts say selloff looks driven by positioning, not fundamentals",company,market,0.5,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-18,SPY,Stocks recover part of losses as selling pressure eases,market,market,0.5,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-13,ENB.TO,Regulator orders pipeline operator to halt a segment pending safety review,company,company,-0.5,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-16,ENB.TO,Pipeline operator warns shutdown could reduce volumes and delay shipments,company,company,-0.7,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-17,ENB.TO,Rating agency places pipeline operator on review for possible downgrade,company,company,-0.7,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-19,ENB.TO,Pipeline operator says repairs will take longer than first expected,company,company,-0.5,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-13,GLD,Gold surges as investors rush into safe havens,market,market,0.8,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-16,GLD,Record inflows into gold funds as demand for safe havens soars,market,market,0.9,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-13,ZST.TO,Short-term bond ETFs hold steady during equity selloff,market,market,0.5,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-13,PG,Consumer staples hold up better than the broader market,market,company,0.2,us.amazon.nova-lite-v1:0,SIMULATED

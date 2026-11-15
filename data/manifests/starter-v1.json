@@ -1,0 +1,51 @@
+{
+  "dataset_id": "alphaforge-starter-v1",
+  "generated_at": "2026-11-14T19:39:53.503569+00:00",
+  "source_directory": "hackathon_info/alphaforge_starter",
+  "s3_prefix": "starter/v1",
+  "files": [
+    {
+      "name": "assets_universe.csv",
+      "bytes": 2089,
+      "rows": 31,
+      "sha256": "f78de8ecb36d914a3448db63498cc9a04a34d805bccb79c481dda1650755467d"
+    },
+    {
+      "name": "prices_daily.csv",
+      "bytes": 3224985,
+      "rows": 40049,
+      "sha256": "ff2a3f2d0a7d72ea835e8d616d041e0510f018340cef3d3e55b918830e8a569d"
+    },
+    {
+      "name": "corporate_actions.csv",
+      "bytes": 29728,
+      "rows": 658,
+      "sha256": "37d99f1472f9f1c7360432835353488bdf72bb055295ec66155211a30d8312b1"
+    },
+    {
+      "name": "fx_usdcad_daily.csv",
+      "bytes": 33344,
+      "rows": 1245,
+      "sha256": "f04e218ac5b0145fd552b3d0dcfbf73e5e17bb9a6fb4562460dbec95cb8972b3"
+    },
+    {
+      "name": "macro_rates.csv",
+      "bytes": 1074518,
+      "rows": 8281,
+      "sha256": "2c04b0ca5590396fee1f0de13c0b2a95731125a61c79166d553d106f0375c73e"
+    },
+    {
+      "name": "sources_metadata.csv",
+      "bytes": 2846,
+      "rows": 6,
+      "sha256": "7ff17052c8235888c4984430830610ae0d81c0df71585afaacb87ba5fe531bdf"
+    }
+  ],
+  "quality_notes": [
+    "Adjusted close is used for historical returns.",
+    "USD listings require dated USD/CAD conversion.",
+    "Trading calendars are not aligned in the source data.",
+    "Monthly macro dates are reference dates, not publication dates.",
+    "The asset universe has survivorship and selection bias."
+  ]
+}

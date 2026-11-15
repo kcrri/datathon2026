@@ -1,0 +1,36 @@
+{
+  "dataset_id": "market-change-simulation-v1",
+  "description": "A simulated market change that follows the current simulation.",
+  "window": [
+    "2026-11-13",
+    "2026-11-19"
+  ],
+  "simulated": true,
+  "expected_verdict_if_sold": {
+    "QQQ": "panic_risk",
+    "NVDA": "panic_risk",
+    "SHOP.TO": "panic_risk",
+    "SPY": "panic_risk",
+    "ENB.TO": "evidence_supported",
+    "XIU.TO": "no_signal",
+    "FTS.TO": "no_signal",
+    "PG": "no_signal",
+    "ZST.TO": "no_signal",
+    "XBB.TO": "no_signal",
+    "GLD": "no_signal"
+  },
+  "expected_verdict_if_bought": {
+    "QQQ": "dip_with_context",
+    "NVDA": "dip_with_context",
+    "SHOP.TO": "dip_with_context",
+    "SPY": "dip_with_context",
+    "ENB.TO": "falling_knife",
+    "GLD": "chasing_risk",
+    "XIU.TO": "no_signal",
+    "FTS.TO": "no_signal",
+    "PG": "no_signal",
+    "ZST.TO": "no_signal",
+    "XBB.TO": "no_signal"
+  },
+  "notes": "Fictional price moves and headlines for demonstration. Not real market data."
+}

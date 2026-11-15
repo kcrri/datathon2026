@@ -1,0 +1,12 @@
+date,ticker,headline,scope,label_scope,sentiment,model_id,source
+2026-10-22,NVDA,Chipmaker posts steady data-centre demand in quarterly update,company,company,0.7,us.amazon.nova-lite-v1:0,SIMULATED
+2026-10-27,QQQ,Technology shares edge higher as earnings season begins,market,market,0.2,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-02,SHOP.TO,Online retailer platform reports stable merchant growth,company,company,0.6,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-03,SPY,U.S. stocks end mixed ahead of central bank commentary,market,market,0.0,us.amazon.nova-lite-v1:0,SIMULATED
+2026-10-29,ENB.TO,Pipeline operator reaffirms dividend and steady volumes,company,company,0.8,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-05,XIU.TO,Canadian benchmark index holds near recent range,market,market,0.0,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-06,FTS.TO,Utility completes routine rate filing with regulator,company,company,0.0,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-09,PG,Household goods maker highlights stable consumer demand,company,company,0.8,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-10,ZST.TO,Short-term bond yields little changed this week,market,market,0.0,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-11,XBB.TO,Canadian bond market quiet as investors await inflation data,market,market,0.0,us.amazon.nova-lite-v1:0,SIMULATED
+2026-11-12,GLD,Gold trades in a narrow range as dollar steadies,market,market,0.0,us.amazon.nova-lite-v1:0,SIMULATED

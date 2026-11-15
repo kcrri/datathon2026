@@ -1,0 +1,15 @@
+version = 0.1
+
+[workshop.build.parameters]
+template_file = "infra/template.yaml"
+build_dir = ".aws-sam/build"
+
+[workshop.deploy.parameters]
+stack_name = "portfolioguard-workshop"
+region = "us-east-1"
+profile = "portfolioguard-workshop"
+confirm_changeset = true
+resolve_s3 = true
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "Environment=workshop DataPrefix=starter/v1 DatasetId=alphaforge-starter-v1 BedrockModelId=us.amazon.nova-lite-v1:0"
+tags = "Project=PortfolioGuardAI Environment=workshop ManagedBy=AWS-SAM Workshop=Polyfinances2026"

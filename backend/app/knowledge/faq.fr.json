@@ -1,0 +1,794 @@
+[
+  {
+    "id": "recession",
+    "keywords": [
+      "récession",
+      "recession",
+      "ralentissement",
+      "krach",
+      "marché baissier",
+      "économie",
+      "economie"
+    ],
+    "question": "Je m'inquiète d'une récession",
+    "agents": [
+      "Macro Signal Agent",
+      "Risk Agent"
+    ],
+    "answer": "Les récessions sont difficiles à prévoir. Un signal d'alerte courant est une courbe des taux inversée (rendement à 2 ans supérieur à celui à 10 ans), accompagnée d'une hausse du chômage. Les horizons courts sont plus exposés à un ralentissement, car il reste moins de temps pour se rétablir."
+  },
+  {
+    "id": "inflation",
+    "keywords": [
+      "inflation",
+      "ipc",
+      "prix qui montent",
+      "coût de la vie",
+      "cout de la vie",
+      "hausse des prix"
+    ],
+    "question": "Comment l'inflation affecte-t-elle mes placements ?",
+    "agents": [
+      "Macro Signal Agent"
+    ],
+    "answer": "L'inflation réduit la valeur réelle des liquidités et des obligations à taux fixe. Les actions et les actifs réels ont historiquement mieux suivi l'inflation sur de longues périodes, mais pas chaque année."
+  },
+  {
+    "id": "rates",
+    "keywords": [
+      "taux d'intérêt",
+      "taux d'interet",
+      "taux directeur",
+      "banque du canada",
+      "réserve fédérale",
+      "reserve federale",
+      "baisse de taux",
+      "hausse de taux",
+      "les taux"
+    ],
+    "question": "Que signifient les taux d'intérêt pour moi ?",
+    "agents": [
+      "Macro Signal Agent",
+      "Bond Agent"
+    ],
+    "answer": "Quand les taux montent, le prix des obligations existantes baisse, et celui des obligations à plus longue durée baisse davantage. Des taux plus élevés rendent aussi l'emprunt plus coûteux pour les entreprises, ce qui peut peser sur les actions de croissance."
+  },
+  {
+    "id": "account_types",
+    "keywords": [
+      "celi",
+      "reer",
+      "celiapp",
+      "non enregistré",
+      "non enregistre",
+      "type de compte",
+      "quel compte"
+    ],
+    "question": "Quelle est la différence entre le CELI, le REER, le CELIAPP et le compte non enregistré ?",
+    "agents": [
+      "Investor Profile Agent"
+    ],
+    "answer": "CELI : croissance et retraits libres d'impôt. REER : cotisations déductibles d'impôt, imposées au retrait, conçu pour la retraite. CELIAPP : pour l'achat d'une première propriété. Compte non enregistré : aucune limite de cotisation et une flexibilité totale, mais les gains sont imposables."
+  },
+  {
+    "id": "diversification",
+    "keywords": [
+      "diversif",
+      "concentr",
+      "trop de techno",
+      "répartir",
+      "repartir",
+      "répartition",
+      "repartition"
+    ],
+    "question": "Pourquoi diversifier ?",
+    "agents": [
+      "Risk Agent"
+    ],
+    "answer": "Détenir différentes catégories d'actifs, secteurs et régions réduit l'effet d'une perte isolée. Cela diminue le risque sans nécessairement diminuer le rendement à long terme."
+  },
+  {
+    "id": "crypto",
+    "keywords": [
+      "crypto",
+      "bitcoin",
+      "btc",
+      "ethereum",
+      "eth",
+      "cryptomonnaie"
+    ],
+    "question": "Devrais-je détenir des cryptomonnaies ?",
+    "agents": [
+      "Crypto Agent",
+      "Risk Agent"
+    ],
+    "answer": "Le bitcoin et l'éther ont été bien plus volatils que les actions, avec des baisses de plus de 70 %. Seuls les profils de croissance à long horizon envisagent habituellement une petite position plafonnée."
+  },
+  {
+    "id": "esg",
+    "keywords": [
+      "esg",
+      "durable",
+      "éthique",
+      "ethique",
+      "vert",
+      "environnement"
+    ],
+    "question": "Qu'est-ce que l'investissement ESG ?",
+    "agents": [
+      "ESG Agent"
+    ],
+    "answer": "Les filtres ESG tiennent compte de facteurs environnementaux, sociaux et de gouvernance. Les fonds ESG comme ESGV excluent certains secteurs, ce qui peut modifier le rendement et le risque par rapport à un indice large comme SPY."
+  },
+  {
+    "id": "volatility",
+    "keywords": [
+      "volatil",
+      "risque",
+      "baisse maximale",
+      "perdre de l'argent",
+      "perte"
+    ],
+    "question": "Qu'est-ce que la volatilité ?",
+    "agents": [
+      "Risk Agent"
+    ],
+    "answer": "La volatilité mesure l'ampleur des variations de prix. La baisse maximale est la plus forte chute depuis un sommet. Les deux décrivent le passé et ne prédisent pas l'avenir."
+  },
+  {
+    "id": "etf_basics",
+    "keywords": [
+      "fnb",
+      "etf",
+      "fonds indiciel",
+      "fonds commun",
+      "frais de gestion",
+      "frais"
+    ],
+    "question": "Qu'est-ce qu'un FNB et pourquoi les frais comptent-ils ?",
+    "agents": [
+      "Balanced Index Agent"
+    ],
+    "answer": "Un FNB est un panier de titres qui se négocie comme une action. Les FNB indiciels larges comme XIU.TO (Canada), SPY (États-Unis) et QQQ (Nasdaq-100) offrent une diversification immédiate à faible coût. Les frais jouent contre vous : à titre indicatif, des frais annuels de 2,0 % sur un fonds qui rapporte 7 % avant frais laissent 5 %, ce qui, sur 25 ans, peut coûter environ le tiers du solde final par rapport à des frais de 0,2 %."
+  },
+  {
+    "id": "bonds",
+    "keywords": [
+      "obligation",
+      "revenu fixe",
+      "trésor",
+      "tresor",
+      "coupon"
+    ],
+    "question": "Quel rôle jouent les obligations dans un portefeuille ?",
+    "agents": [
+      "Bond Agent",
+      "Macro Signal Agent"
+    ],
+    "answer": "Les obligations versent des intérêts réguliers et bougent habituellement moins que les actions, ce qui amortit un portefeuille en période de repli. XBB.TO et AGG détiennent de larges marchés obligataires, ZST.TO détient des obligations très courtes qui réagissent à peine aux variations de taux, et TLT détient des obligations du Trésor à long terme qui réagissent fortement. Règle générale : un fonds obligataire d'une durée de 7 ans baisse d'environ 7 % si les taux montent de 1 point de pourcentage."
+  },
+  {
+    "id": "dividends",
+    "keywords": [
+      "dividende",
+      "revenu passif",
+      "versement",
+      "action à revenu",
+      "action a revenu",
+      "rendement"
+    ],
+    "question": "Comment fonctionnent les actions à dividendes ?",
+    "agents": [
+      "Dividend Strategy Agent",
+      "Risk Agent"
+    ],
+    "answer": "Les actions à dividendes, comme celles des banques (RY.TO, TD.TO), des services publics (FTS.TO) et des biens de consommation de base (PG, JNJ), redistribuent une partie de leurs bénéfices en espèces. Un rendement élevé n'est pas automatiquement bon : un rendement anormalement élevé peut signaler que le marché s'attend à une réduction. La stratégie Dividendes détient plutôt des entreprises plus stables et moins volatiles, c'est pourquoi elle sacrifie généralement un peu de potentiel de hausse pour une trajectoire plus régulière que la croissance."
+  },
+  {
+    "id": "growth_stocks",
+    "keywords": [
+      "action de croissance",
+      "actions de croissance",
+      "stratégie de croissance",
+      "strategie de croissance",
+      "nasdaq",
+      "action techno",
+      "shopify",
+      "nvidia"
+    ],
+    "question": "Que sont les actions de croissance et quel est leur niveau de risque ?",
+    "agents": [
+      "Growth Strategy Agent",
+      "Risk Agent"
+    ],
+    "answer": "Les entreprises de croissance comme NVDA, SHOP.TO, MSFT et AMZN réinvestissent leurs bénéfices pour s'étendre plutôt que de verser des dividendes ; leur valeur dépend donc beaucoup des attentes futures. Elles peuvent monter rapidement, mais chutent généralement plus fort quand les taux montent ou que le sentiment se retourne. À titre indicatif, un portefeuille très techno peut perdre de 25 % à 35 % lors d'une mauvaise année, ce qui le destine aux longs horizons et à une tolérance au risque élevée."
+  },
+  {
+    "id": "momentum",
+    "keywords": [
+      "momentum",
+      "élan",
+      "elan",
+      "tendance",
+      "moyenne mobile",
+      "courir après",
+      "gagnants"
+    ],
+    "question": "Qu'est-ce que l'investissement momentum ?",
+    "agents": [
+      "Momentum Strategy Agent",
+      "Technical Signal Agent"
+    ],
+    "answer": "Le momentum achète les actifs qui ont récemment surperformé, en partant de l'idée que les tendances persistent pendant des mois. L'agent de signaux techniques examine les moyennes mobiles et les rendements récents. Le risque est celui des renversements soudains : les stratégies momentum peuvent perdre beaucoup en quelques semaines quand le leadership change ; elles fonctionnent donc mieux comme petite composante satellite que comme portefeuille entier."
+  },
+  {
+    "id": "capital_preservation",
+    "keywords": [
+      "préserv",
+      "preserv",
+      "sécuritaire",
+      "securitaire",
+      "garanti",
+      "faible risque",
+      "prudent",
+      "bien dormir",
+      "protéger mon argent",
+      "proteger mon argent",
+      "grosses pertes"
+    ],
+    "question": "Comment protéger mon argent et éviter de grosses pertes ?",
+    "agents": [
+      "Capital Preservation Strategy Agent",
+      "Bond Agent"
+    ],
+    "answer": "La préservation du capital s'appuie sur des obligations à court terme (ZST.TO), de larges fonds obligataires (XBB.TO, AGG) et un peu d'or (GLD). Elle vise de faibles baisses, mais rien n'est garanti : les obligations peuvent reculer quand les taux montent, et un faible risque signifie aussi un rendement attendu plus bas, qui peut être inférieur à l'inflation sur de nombreuses années."
+  },
+  {
+    "id": "time_horizon",
+    "keywords": [
+      "horizon",
+      "court terme",
+      "long terme",
+      "moyen terme",
+      "quand ai-je besoin",
+      "quand ai je besoin"
+    ],
+    "question": "Comment mon horizon de placement change-t-il ma stratégie ?",
+    "agents": [
+      "Investor Profile Agent",
+      "Risk Agent"
+    ],
+    "answer": "L'argent dont vous avez besoin d'ici environ 2 ans doit se trouver dans des actifs stables, car il n'y a pas le temps de se remettre d'une baisse. Pour 3 à 7 ans, un mélange équilibré est courant. Pour 10 ans et plus, les actions portent habituellement la majeure partie du portefeuille, car les variations à court terme comptent moins avec le temps. Chaque compte ici est géré par un agent d'horizon court, moyen ou long pour cette raison."
+  },
+  {
+    "id": "rebalancing",
+    "keywords": [
+      "rééquilibr",
+      "reequilibr",
+      "dérive",
+      "derive",
+      "retour à la cible",
+      "retour a la cible",
+      "déséquilibr",
+      "desequilibr"
+    ],
+    "question": "Qu'est-ce que le rééquilibrage ?",
+    "agents": [
+      "Risk Agent"
+    ],
+    "answer": "Avec le temps, les gagnants grossissent et votre répartition s'écarte de la cible. Le rééquilibrage vend une partie de ce qui a monté et achète ce qui a stagné pour rétablir les pondérations cibles. Exemple : un portefeuille 60/40 actions/obligations qui dérive à 72/28 après une hausse comporte plus de risque que prévu. Les approches courantes consistent à rééquilibrer une ou deux fois par an, ou quand une pondération s'écarte de plus de 5 points de pourcentage."
+  },
+  {
+    "id": "dollar_cost_averaging",
+    "keywords": [
+      "moyenne du coût",
+      "moyenne du cout",
+      "achats périodiques",
+      "achats periodiques",
+      "somme forfaitaire",
+      "investir régulièrement",
+      "investir regulierement",
+      "d'un seul coup",
+      "en une fois",
+      "graduellement"
+    ],
+    "question": "Devrais-je investir tout en une fois ou graduellement ?",
+    "agents": [
+      "Investor Profile Agent"
+    ],
+    "answer": "Investir une somme forfaitaire immédiatement a historiquement fait mieux plus souvent qu'autrement, car les marchés montent plus souvent qu'ils ne baissent. Investir un montant fixe selon un calendrier (achats périodiques) réduit les regrets et le risque d'acheter juste avant une baisse. Aucune des deux méthodes n'est assurée de gagner. Choisissez celle que vous respecterez vraiment."
+  },
+  {
+    "id": "currency",
+    "keywords": [
+      "devise",
+      "usd",
+      "taux de change",
+      "change",
+      "usd/cad",
+      "dollar américain",
+      "dollar americain"
+    ],
+    "question": "Comment le taux de change USD/CAD m'affecte-t-il ?",
+    "agents": [
+      "Market Data Agent"
+    ],
+    "answer": "Les titres américains comme AAPL, SPY ou GLD sont cotés en USD. Cette plateforme les convertit en CAD au taux USD/CAD en vigueur à la date (ou la plus récente avant) ; un dollar américain plus fort augmente donc leur valeur en CAD et un dollar plus faible la réduit, indépendamment de l'actif lui-même. Un titre américain peut ainsi monter en USD tout en paraissant stable en CAD."
+  },
+  {
+    "id": "gold",
+    "keywords": [
+      "or",
+      "gld",
+      "valeur refuge",
+      "couverture",
+      "matières premières",
+      "matieres premieres"
+    ],
+    "question": "Pourquoi détenir de l'or ?",
+    "agents": [
+      "Capital Preservation Strategy Agent",
+      "Risk Agent"
+    ],
+    "answer": "L'or (GLD) évolue souvent différemment des actions et peut aider lors de craintes d'inflation ou de tensions sur les marchés ; une petite allocation d'environ 5 % à 10 % est un diversificateur courant. Il ne verse aucun revenu et peut rester stable ou reculer pendant des années : c'est une couverture, pas un moteur de croissance."
+  },
+  {
+    "id": "home_bias",
+    "keywords": [
+      "seulement au canada",
+      "uniquement au canada",
+      "biais domestique",
+      "actions canadiennes",
+      "seulement canadien",
+      "tsx",
+      "canada seulement",
+      "investir au canada"
+    ],
+    "question": "Devrais-je investir seulement au Canada ?",
+    "agents": [
+      "Risk Agent",
+      "Balanced Index Agent"
+    ],
+    "answer": "Le Canada représente une petite part des marchés mondiaux et se concentre dans les banques, l'énergie et les matériaux, avec peu d'exposition à la technologie. Détenir uniquement des actions canadiennes (par exemple XIU.TO) vous expose à quelques secteurs. Ajouter des fonds américains et mondiaux comme SPY répartit ce risque, au prix des fluctuations de devises."
+  },
+  {
+    "id": "contribution_room",
+    "keywords": [
+      "droits de cotisation",
+      "limite de cotisation",
+      "plafond celi",
+      "plafond reer",
+      "cotiser en trop",
+      "combien puis-je cotiser",
+      "combien puis je cotiser"
+    ],
+    "question": "Combien puis-je cotiser à un CELI ou à un REER ?",
+    "agents": [
+      "Investor Profile Agent"
+    ],
+    "answer": "Les droits de cotisation au CELI sont un montant annuel qui s'accumule s'il n'est pas utilisé. Les droits au REER correspondent généralement à 18 % du revenu gagné de l'an dernier jusqu'à un maximum annuel, plus les droits inutilisés. Une cotisation excédentaire entraîne une pénalité de 1 % par mois sur l'excédent. Vérifiez vos droits exacts dans Mon dossier de l'ARC, car les limites changent chaque année."
+  },
+  {
+    "id": "rrsp_tax",
+    "keywords": [
+      "remboursement d'impôt",
+      "remboursement d'impot",
+      "déduction",
+      "deduction",
+      "déductible",
+      "deductible",
+      "tranche d'imposition",
+      "remboursement reer"
+    ],
+    "question": "Comment fonctionne la déduction fiscale du REER ?",
+    "agents": [
+      "Investor Profile Agent"
+    ],
+    "answer": "Les cotisations au REER réduisent votre revenu imposable de l'année. Exemple (à titre indicatif) : à un taux marginal de 30 %, une cotisation de 5 000 dollars peut réduire votre facture d'impôt d'environ 1 500 dollars. Les retraits sont imposés comme un revenu ; le REER fonctionne donc généralement mieux lorsque votre taux d'imposition à la retraite est inférieur à celui d'aujourd'hui."
+  },
+  {
+    "id": "fhsa",
+    "keywords": [
+      "celiapp",
+      "première propriété",
+      "premiere propriete",
+      "mise de fonds",
+      "acheter une maison",
+      "acheter une propriété",
+      "premier achat"
+    ],
+    "question": "Comment le CELIAPP m'aide-t-il à acheter une première propriété ?",
+    "agents": [
+      "Investor Profile Agent",
+      "Capital Preservation Strategy Agent"
+    ],
+    "answer": "Le CELIAPP combine le meilleur des deux mondes : les cotisations sont déductibles d'impôt comme dans un REER, et les retraits admissibles pour une première propriété sont libres d'impôt comme dans un CELI. Si vous prévoyez acheter d'ici quelques années, un mélange prudent est généralement plus sensé qu'un portefeuille concentré en actions, car une baisse du marché juste avant l'achat pourrait réduire votre mise de fonds."
+  },
+  {
+    "id": "capital_gains_tax",
+    "keywords": [
+      "gains de placement",
+      "impots sur les gains",
+      "imposition des gains",
+      "gain en capital",
+      "perte en capital",
+      "impôt sur les gains",
+      "impot sur les gains",
+      "compte imposable",
+      "perte fiscale",
+      "gains imposés",
+      "gains imposes",
+      "mes gains sont-ils imposés"
+    ],
+    "question": "Comment les gains de placement sont-ils imposés ?",
+    "agents": [
+      "Investor Profile Agent"
+    ],
+    "answer": "Dans un CELI, les gains et les dividendes ne sont pas imposés. Dans un REER, ils sont reportés jusqu'au retrait. Dans un compte non enregistré, seule la moitié d'un gain en capital est généralement incluse dans le revenu, alors que les intérêts sont entièrement imposables. Les pertes en capital peuvent compenser les gains, ce qui explique pourquoi les investisseurs vendent parfois un titre perdant pour réduire leur facture d'impôt."
+  },
+  {
+    "id": "withholding_tax",
+    "keywords": [
+      "retenue",
+      "dividendes américains",
+      "dividendes americains",
+      "dividende étranger",
+      "dividende etranger",
+      "impôt étranger",
+      "impot etranger",
+      "actions américaines dans",
+      "imposés différemment",
+      "imposes differemment"
+    ],
+    "question": "Les dividendes américains sont-ils imposés différemment ?",
+    "agents": [
+      "Investor Profile Agent"
+    ],
+    "answer": "Les dividendes américains sont généralement assujettis à une retenue d'impôt de 15 % pour les Canadiens. Elle est habituellement levée dans un REER pour les actions américaines détenues directement, mais elle s'applique tout de même dans un CELI. C'est une raison pour laquelle on détient des titres américains à dividendes dans un REER et des titres canadiens à dividendes dans un CELI ou un compte non enregistré."
+  },
+  {
+    "id": "correlation",
+    "keywords": [
+      "corrélat",
+      "correlat",
+      "évoluent ensemble",
+      "evoluent ensemble",
+      "bougent ensemble",
+      "non corrélé",
+      "non correle"
+    ],
+    "question": "Qu'est-ce que la corrélation et pourquoi est-elle importante ?",
+    "agents": [
+      "Risk Agent"
+    ],
+    "answer": "La corrélation mesure à quel point deux actifs évoluent ensemble, de -1 (en sens opposé) à +1 (en parfaite synchronisation). Détenir des actifs peu corrélés est ce qui fait fonctionner la diversification. En période de crise, les corrélations entre actions tendent à grimper vers 1 ; cinq titres technologiques peuvent donc chuter ensemble même s'ils semblent être des placements distincts."
+  },
+  {
+    "id": "risk_adjusted",
+    "keywords": [
+      "comparer equitablement",
+      "comparer les rendements",
+      "rendements entre strategies",
+      "sharpe",
+      "ajusté au risque",
+      "ajuste au risque",
+      "rendement par unité",
+      "meilleur rendement pour le risque",
+      "comparer les rendements",
+      "entre les stratégies",
+      "entre les strategies"
+    ],
+    "question": "Comment comparer équitablement les rendements entre stratégies ?",
+    "agents": [
+      "Risk Agent"
+    ],
+    "answer": "Comparer les rendements bruts ignore l'irrégularité du parcours. Le ratio de Sharpe divise le rendement excédentaire par la volatilité. À titre indicatif, une stratégie qui rapporte 12 % avec 20 % de volatilité a un ratio inférieur à celle qui rapporte 9 % avec 10 % de volatilité ; la seconde peut donc être plus avantageuse par unité de risque. Il repose toujours sur des données passées et ne dit rien de l'avenir."
+  },
+  {
+    "id": "drawdown_recovery",
+    "keywords": [
+      "se remettre d'une perte",
+      "combien de temps faut-il",
+      "rétablissement",
+      "retablissement",
+      "se rétablir",
+      "se retablir",
+      "remonter",
+      "combien de temps pour retrouver",
+      "seuil de rentabilité",
+      "seuil de rentabilite"
+    ],
+    "question": "Combien de temps faut-il pour se remettre d'une perte ?",
+    "agents": [
+      "Risk Agent"
+    ],
+    "answer": "Les pertes sont plus difficiles à effacer qu'il n'y paraît : une baisse de 20 % exige un gain de 25 % pour revenir à zéro, et une baisse de 50 % exige un gain de 100 %. Le temps de rétablissement varie beaucoup. Les portefeuilles d'actions diversifiés se sont historiquement remis de fortes baisses en quelques années, alors que des positions concentrées ne l'ont parfois jamais fait."
+  },
+  {
+    "id": "beta",
+    "keywords": [
+      "bêta",
+      "beta",
+      "sensibilité au marché",
+      "sensibilite au marche",
+      "plus volatil que le marché",
+      "plus volatil que le marche",
+      "défensif",
+      "defensif"
+    ],
+    "question": "Que signifie le bêta ?",
+    "agents": [
+      "Risk Agent"
+    ],
+    "answer": "Le bêta compare les mouvements d'un actif à ceux du marché dans son ensemble. Un bêta de 1,0 évolue comme le marché, 1,3 tend à bouger d'environ 30 % de plus, et 0,6 d'environ 40 % de moins. Les titres à bêta élevé comme TSLA et NVDA amplifient les variations du marché, tandis que les valeurs défensives comme PG, JNJ et FTS.TO les atténuent habituellement."
+  },
+  {
+    "id": "emergency_fund",
+    "keywords": [
+      "urgence",
+      "fonds d'urgence",
+      "jour de pluie",
+      "réserve de liquidités",
+      "reserve de liquidites",
+      "perte d'emploi",
+      "épargne d'abord",
+      "epargne d'abord"
+    ],
+    "question": "Devrais-je d'abord constituer un fonds d'urgence ?",
+    "agents": [
+      "Investor Profile Agent",
+      "Capital Preservation Strategy Agent"
+    ],
+    "answer": "Une règle courante est de garder de 3 à 6 mois de dépenses essentielles en liquidités ou en placements à très court terme avant de prendre un risque de placement. Cela évite de devoir vendre des actions au mauvais moment pour couvrir une facture imprévue. ZST.TO est un exemple de fonds d'obligations à très court terme, mais seul un compte d'épargne est vraiment stable."
+  },
+  {
+    "id": "risk_tolerance",
+    "keywords": [
+      "tolérance au risque",
+      "tolerance au risque",
+      "profil de risque",
+      "combien de risque",
+      "à l'aise avec",
+      "a l'aise avec",
+      "niveau de risque",
+      "étiquette de risque",
+      "etiquette de risque"
+    ],
+    "question": "Comment savoir quel niveau de risque je peux prendre ?",
+    "agents": [
+      "Investor Profile Agent",
+      "Risk Agent"
+    ],
+    "answer": "Le risque a deux facettes : votre capacité à prendre des risques (horizon, stabilité du revenu, épargne) et votre volonté (comment vous réagiriez à une baisse de 20 %). Votre étiquette de risque combine les deux. Si une perte importante vous pousserait à vendre par panique, choisissez un niveau de risque plus bas, car cristalliser les pertes est l'erreur la plus courante."
+  },
+  {
+    "id": "past_performance",
+    "keywords": [
+      "test rétrospectif",
+      "test retrospectif",
+      "rendement passé",
+      "rendement passe",
+      "historique",
+      "prévision",
+      "prevision",
+      "prédire",
+      "predire",
+      "va-t-il monter",
+      "va t il monter"
+    ],
+    "question": "Le rendement passé peut-il prédire les rendements futurs ?",
+    "agents": [
+      "Explainability Agent",
+      "Risk Agent"
+    ],
+    "answer": "Non. Les tests rétrospectifs décrivent ce qui s'est produit dans une fenêtre précise, ici environ les trois dernières années des données de départ, et cette fenêtre peut comporter des conditions inhabituelles. Ils sont utiles pour comparer des stratégies sur un même historique, mais ils ignorent les chocs futurs, les frais, les impôts et les coûts de transaction. Considérez chaque chiffre comme une observation, non comme une prévision."
+  },
+  {
+    "id": "how_calculated",
+    "keywords": [
+      "comment calculez-vous",
+      "comment calculez vous",
+      "d'où viennent les données",
+      "d'ou viennent les donnees",
+      "source des données",
+      "source des donnees",
+      "déterministe",
+      "deterministe",
+      "comment sont calculés les chiffres",
+      "puis-je me fier",
+      "puis je me fier",
+      "d'où viennent les chiffres",
+      "d'ou viennent les chiffres"
+    ],
+    "question": "D'où viennent les chiffres ?",
+    "agents": [
+      "Market Data Agent",
+      "Explainability Agent"
+    ],
+    "answer": "Chaque chiffre financier est calculé par un service de calcul vérifiable à partir de jeux de données versionnés, dont l'intégrité des fichiers est vérifiée avant utilisation. Le modèle de langage ne fait qu'expliquer des preuves déjà vérifiées et il lui est interdit de créer des chiffres. Chaque réponse indique ses sources, afin que vous puissiez voir d'où elle provient."
+  },
+  {
+    "id": "governance",
+    "keywords": [
+      "refuse-t-il",
+      "plafonne-t-il",
+      "garde-fou",
+      "garde fou",
+      "gouvernance",
+      "pourquoi ne peut-on pas",
+      "pas permis",
+      "limite de position",
+      "plafonner",
+      "refuse ou plafonne",
+      "système refuse parfois",
+      "systeme refuse parfois"
+    ],
+    "question": "Pourquoi le système refuse-t-il ou plafonne-t-il parfois une demande ?",
+    "agents": [
+      "Governance Agent"
+    ],
+    "answer": "L'agent de gouvernance applique des règles fixes avant toute approbation : par exemple, plafonner les positions à risque élevé comme les cryptomonnaies, rejeter des pondérations dont la somme est incorrecte et refuser les demandes qui manquent de données. Ces vérifications sont déterministes ; une même demande reçoit donc toujours la même décision, et tout refus est accompagné de sa raison."
+  },
+  {
+    "id": "stock_picking",
+    "keywords": [
+      "choix d'actions",
+      "choisir des actions",
+      "action individuelle",
+      "meilleure action",
+      "quelle action",
+      "titre individuel"
+    ],
+    "question": "Vaut-il mieux choisir des actions ou acheter un indice ?",
+    "agents": [
+      "Risk Agent",
+      "Balanced Index Agent"
+    ],
+    "answer": "Choisir des actions individuelles ajoute un risque propre à l'entreprise : un seul mauvais rapport de bénéfices peut faire chuter un titre de 20 % ou plus en une journée. Les fonds indiciels larges répartissent ce risque sur des centaines d'entreprises. Beaucoup d'investisseurs détiennent un noyau indiciel et gardent une petite part, souvent moins de 10 % à 20 %, pour des choix individuels."
+  },
+  {
+    "id": "stagflation",
+    "keywords": [
+      "stagflation",
+      "forte inflation et",
+      "croissance faible"
+    ],
+    "question": "Qu'est-ce que la stagflation ?",
+    "agents": [
+      "Macro Signal Agent"
+    ],
+    "answer": "La stagflation est une croissance économique lente combinée à une forte inflation et à un chômage en hausse. Elle est difficile pour les portefeuilles, car les actions peinent et les obligations perdent de la valeur à mesure que les taux montent pour combattre l'inflation. Les actifs réels comme l'or et les sociétés énergétiques ont parfois mieux résisté, bien qu'aucun actif ne protège de façon fiable à chaque épisode."
+  },
+  {
+    "id": "yield_curve",
+    "keywords": [
+      "courbe des taux",
+      "inversée",
+      "inversee",
+      "inversion",
+      "2 ans",
+      "10 ans"
+    ],
+    "question": "Qu'est-ce qu'une courbe des taux inversée ?",
+    "agents": [
+      "Macro Signal Agent"
+    ],
+    "answer": "Normalement, les obligations à plus long terme rapportent davantage que celles à plus court terme. Quand les rendements à court terme dépassent ceux à long terme, la courbe est inversée. Historiquement, cela a souvent précédé des récessions, mais avec un délai long et variable de plusieurs mois à plusieurs années, et parfois sans récession. C'est un voyant d'alerte, pas un minuteur."
+  },
+  {
+    "id": "crypto_sizing",
+    "keywords": [
+      "part de cryptomonnaies",
+      "quelle part de crypto",
+      "combien de crypto",
+      "allocation crypto",
+      "taille de position",
+      "pourcentage de bitcoin",
+      "pourcentage crypto"
+    ],
+    "question": "Quelle part de cryptomonnaies est raisonnable ?",
+    "agents": [
+      "Crypto Agent",
+      "Governance Agent",
+      "Risk Agent"
+    ],
+    "answer": "Comme BTC-USD et ETH-USD peuvent chuter de plus de 70 % au cours d'un cycle, la taille de la position compte plus que le choix. À titre indicatif : 0 % pour la préservation du capital, jusqu'à environ 5 % pour les profils équilibrés et jusqu'à environ 10 % pour les profils de croissance à long horizon. L'agent de gouvernance impose un plafond, et seul l'argent que vous pouvez vous permettre de perdre devrait y aller."
+  },
+  {
+    "id": "quality_investing",
+    "keywords": [
+      "qualité",
+      "qualite",
+      "rentabilité",
+      "rentabilite",
+      "avantage concurrentiel",
+      "bilan solide",
+      "durable"
+    ],
+    "question": "Qu'est-ce que l'investissement de qualité ?",
+    "agents": [
+      "Quality Agent"
+    ],
+    "answer": "L'investissement de qualité privilégie les entreprises aux bénéfices réguliers, à faible endettement et aux avantages durables, comme CNR.TO, CSU.TO, MSFT ou JNJ. Elles tendent à mieux résister aux replis que les entreprises au bilan fragile, mais se négocient souvent à prime ; elles peuvent donc tirer de l'arrière lors de fortes hausses spéculatives."
+  },
+  {
+    "id": "asset_allocation",
+    "keywords": [
+      "répartition de l'actif",
+      "repartition de l'actif",
+      "équilibré",
+      "equilibre",
+      "60/40",
+      "tout-en-un",
+      "répartition cible",
+      "quel mélange",
+      "quel melange",
+      "mélange d'actions et d'obligations",
+      "melange d'actions et d'obligations"
+    ],
+    "question": "Quel est un bon mélange d'actions et d'obligations ?",
+    "agents": [
+      "Balanced Index Agent",
+      "Investor Profile Agent"
+    ],
+    "answer": "Un mélange équilibré classique est de 60 % d'actions et 40 % d'obligations. Profils indicatifs : prudent 30/70, équilibré 60/40, croissance 80/20 et audacieux 100/0. Votre mélange compte plus que le choix de fonds individuels, et il devrait suivre votre horizon et votre tolérance au risque, non les dernières nouvelles."
+  },
+  {
+    "id": "retirement",
+    "keywords": [
+      "retraite",
+      "pension",
+      "combien me faut-il",
+      "combien me faut il",
+      "bas de laine",
+      "règle des 4",
+      "regle des 4"
+    ],
+    "question": "De combien ai-je besoin pour prendre ma retraite ?",
+    "agents": [
+      "Long-Term Horizon Agent",
+      "Investor Profile Agent"
+    ],
+    "answer": "Une règle empirique courante est la règle des 4 % : vous pouvez retirer environ 4 % de votre portefeuille la première année, puis ajuster selon l'inflation. Selon ce repère, 40 000 dollars de dépenses annuelles nécessitent environ 1 000 000 de dollars investis. C'est une approximation : elle ignore les impôts, les prestations gouvernementales et les différentes conditions de marché ; voyez-y un point de départ."
+  },
+  {
+    "id": "market_timing",
+    "keywords": [
+      "prévoir le marché",
+      "prevoir le marche",
+      "attendre",
+      "tout vendre",
+      "correction",
+      "acheter à rabais",
+      "acheter a rabais",
+      "le marché est élevé",
+      "le marche est eleve"
+    ],
+    "question": "Devrais-je attendre un meilleur moment pour investir ou vendre avant une baisse ?",
+    "agents": [
+      "Risk Agent"
+    ],
+    "answer": "Prévoir le marché exige d'avoir raison deux fois : quand sortir et quand revenir. À titre indicatif, rater seulement les dix meilleures journées d'une décennie peut réduire le rendement total d'environ de moitié, et ces journées surviennent souvent juste à côté des pires. Un plan régulier adapté à votre horizon bat généralement les tentatives de prédire les retournements."
+  },
+  {
+    "id": "scope_advice",
+    "keywords": [
+      "conseil",
+      "argent réel",
+      "argent reel",
+      "transaction réelle",
+      "transaction reelle",
+      "négocier pour moi",
+      "negocier pour moi",
+      "garantie",
+      "est-ce légitime",
+      "est ce legitime"
+    ],
+    "question": "Est-ce de vrais conseils financiers ?",
+    "agents": [
+      "Governance Agent",
+      "Explainability Agent"
+    ],
+    "answer": "Non. PortfolioGuard AI est une simulation d'aide à la décision avec des portefeuilles fictifs de CELI et de REER. Aucune transaction réelle n'est effectuée et aucun résultat n'est garanti. Pour vos décisions personnelles, consultez un conseiller financier autorisé."
+  }
+]

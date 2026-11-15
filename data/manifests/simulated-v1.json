@@ -1,0 +1,31 @@
+{
+  "dataset_id": "simulated-market-v1",
+  "generated_at": "2026-11-15T18:51:20.572126+00:00",
+  "source_directory": "data/simulated",
+  "s3_prefix": "simulated/v1",
+  "files": [
+    {
+      "name": "current/prices.csv",
+      "bytes": 52413,
+      "sha256": "c9e21f5db1698bc66debe5dfa277b2f2437f893c05ba0901f69fc508776d086c"
+    },
+    {
+      "name": "current/news.csv",
+      "bytes": 1023,
+      "sha256": "f8a1b484e2d5a7d065b0b3858f89388fc259880e7d0f5357fba227baba563200"
+    },
+    {
+      "name": "marketchange/prices.csv",
+      "bytes": 4613,
+      "sha256": "f8c835160c05502380b937d49389692b07436063aa8beff1fce5e3c675c3eee1"
+    },
+    {
+      "name": "marketchange/news.csv",
+      "bytes": 1488,
+      "sha256": "a5199d75074b72bd7d541bc6eee19605c1a50b19d43de9578a4dca054aa3679c"
+    }
+  ],
+  "notes": [
+    "Fictional price moves and headlines for demonstration. Not real market data."
+  ]
+}

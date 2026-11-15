@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: portfolioguard-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: AWS_REGION
+        value: us-east-1
+      - key: BEDROCK_MODEL_ID
+        value: us.amazon.nova-lite-v1:0
+      - key: LAMBDA_FUNCTION_NAME
+        value: portfolioguard-workshop-financial-tools
+      - key: DATA_PREFIX
+        value: starter/v1
+      - key: S3_BUCKET
+        value: portfolioguard-workshop-data-010928180049-us-east-1
+      - key: FRONTEND_ORIGINS
+        sync: false
+      - key: AGENT_RUNTIME_ARN
+        sync: false
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
+      - key: AWS_SESSION_TOKEN
+        sync: false

@@ -1,0 +1,303 @@
+[
+  {
+    "id": "recession",
+    "keywords": ["recession", "downturn", "crash", "bear market", "economy"],
+    "question": "I'm worried about a recession",
+    "agents": ["Macro Signal Agent", "Risk Agent"],
+    "answer": "Recessions are hard to time. A common warning sign is an inverted yield curve (2-year yield above 10-year), along with rising unemployment. Shorter horizons are more exposed to a downturn because there is less time to recover."
+  },
+  {
+    "id": "inflation",
+    "keywords": ["inflation", "cpi", "prices rising", "cost of living"],
+    "question": "How does inflation affect my investments?",
+    "agents": ["Macro Signal Agent"],
+    "answer": "Inflation reduces the real value of cash and fixed-rate bonds. Equities and real assets have historically kept pace better over long periods, but not in every year."
+  },
+  {
+    "id": "rates",
+    "keywords": ["interest rate", "rates", "fed", "bank of canada", "rate cut", "rate hike"],
+    "question": "What do interest rates mean for me?",
+    "agents": ["Macro Signal Agent", "Bond Agent"],
+    "answer": "When rates rise, existing bond prices fall, and longer-duration bonds fall more. Higher rates also make borrowing costlier for companies, which can weigh on growth stocks."
+  },
+  {
+    "id": "account_types",
+    "keywords": ["tfsa", "rrsp", "fhsa", "non-registered", "account type", "which account"],
+    "question": "What is the difference between TFSA, RRSP, FHSA and non-registered?",
+    "agents": ["Investor Profile Agent"],
+    "answer": "TFSA: tax-free growth and withdrawals. RRSP: tax-deductible contributions, taxed on withdrawal, built for retirement. FHSA: for a first home purchase. Non-registered: no contribution limits and full flexibility, but gains are taxable."
+  },
+  {
+    "id": "diversification",
+    "keywords": ["diversif", "concentrat", "too much tech", "spread"],
+    "question": "Why diversify?",
+    "agents": ["Risk Agent"],
+    "answer": "Holding different asset classes, sectors and regions reduces the impact of any single loss. It lowers risk without necessarily lowering long-term return."
+  },
+  {
+    "id": "crypto",
+    "keywords": ["crypto", "bitcoin", "btc", "ethereum", "eth"],
+    "question": "Should I hold crypto?",
+    "agents": ["Crypto Agent", "Risk Agent"],
+    "answer": "Bitcoin and Ether have been far more volatile than stocks, with drawdowns above 70%. Only growth profiles with long horizons usually consider a small, capped position."
+  },
+  {
+    "id": "esg",
+    "keywords": ["esg", "sustainab", "ethical", "green"],
+    "question": "What is ESG investing?",
+    "agents": ["ESG Agent"],
+    "answer": "ESG screens consider environmental, social and governance factors. ESG funds like ESGV exclude some sectors, which can change returns and risk versus a broad index like SPY."
+  },
+  {
+    "id": "volatility",
+    "keywords": ["volatil", "risk", "drawdown", "lose money"],
+    "question": "What is volatility?",
+    "agents": ["Risk Agent"],
+    "answer": "Volatility measures how much prices move around. Drawdown is the largest drop from a peak. Both describe the past and do not predict the future."
+  },
+  {
+    "id": "etf_basics",
+    "keywords": ["etf", "index fund", "mutual fund", "management expense", "fees"],
+    "question": "What is an ETF and why do fees matter?",
+    "agents": ["Balanced Index Agent"],
+    "answer": "An ETF is a basket of securities that trades like a stock. Broad index ETFs such as XIU.TO (Canada), SPY (U.S.) and QQQ (Nasdaq-100) give instant diversification at a low cost. Fees compound against you: an illustrative 2.0% annual fee on a fund that earns 7% before fees leaves 5%, which over 25 years can cost roughly a third of the final balance compared with a 0.2% fee."
+  },
+  {
+    "id": "bonds",
+    "keywords": ["bond", "fixed income", "treasury", "treasuries", "coupon"],
+    "question": "What role do bonds play in a portfolio?",
+    "agents": ["Bond Agent", "Macro Signal Agent"],
+    "answer": "Bonds pay regular interest and usually move less than stocks, so they cushion a portfolio in downturns. XBB.TO and AGG hold broad bond markets, ZST.TO holds very short bonds that barely react to rate changes, and TLT holds long Treasuries that react strongly. Rule of thumb: a bond fund with a duration of 7 years falls roughly 7% if rates rise 1 percentage point."
+  },
+  {
+    "id": "dividends",
+    "keywords": ["dividend", "passive income", "payout", "income stock", "yield"],
+    "question": "How do dividend stocks work?",
+    "agents": ["Dividend Strategy Agent", "Risk Agent"],
+    "answer": "Dividend stocks such as banks (RY.TO, TD.TO), utilities (FTS.TO) and consumer staples (PG, JNJ) share part of their profits as cash. A high yield is not automatically good: an unusually high yield can signal that the market expects a cut. The Dividend strategy tends to hold steadier, lower-volatility companies, which is why it usually trades some upside for a smoother ride versus growth."
+  },
+  {
+    "id": "growth_stocks",
+    "keywords": ["growth stock", "growth strategy", "nasdaq", "tech stock", "shopify", "nvidia"],
+    "question": "What are growth stocks and how risky are they?",
+    "agents": ["Growth Strategy Agent", "Risk Agent"],
+    "answer": "Growth companies such as NVDA, SHOP.TO, MSFT and AMZN reinvest profits to expand rather than pay dividends, so their value depends heavily on future expectations. They can rise quickly but typically fall harder when rates rise or sentiment turns. Illustratively, a tech-heavy portfolio can lose 25% to 35% in a bad year, which is why it suits long horizons and higher risk tolerance."
+  },
+  {
+    "id": "momentum",
+    "keywords": ["momentum", "trend", "moving average", "chasing", "winners"],
+    "question": "What is momentum investing?",
+    "agents": ["Momentum Strategy Agent", "Technical Signal Agent"],
+    "answer": "Momentum buys assets that have recently outperformed, on the idea that trends tend to persist for months. The Technical Signal Agent looks at moving averages and recent returns. The risk is sudden reversals: momentum strategies can lose a lot in a few weeks when leadership changes, so they work best as a small satellite, not the whole portfolio."
+  },
+  {
+    "id": "capital_preservation",
+    "keywords": ["preserv", "safe", "guaranteed", "low risk", "conservative", "sleep at night", "protect my money", "big losses"],
+    "question": "How do I protect my money and avoid big losses?",
+    "agents": ["Capital Preservation Strategy Agent", "Bond Agent"],
+    "answer": "Capital preservation leans on short-term bonds (ZST.TO), broad bond funds (XBB.TO, AGG) and some gold (GLD). It aims for small drawdowns, but nothing is guaranteed: bonds can fall when rates rise, and low risk also means lower expected return, which can lag inflation over many years."
+  },
+  {
+    "id": "time_horizon",
+    "keywords": ["horizon", "short-term", "short term", "long-term", "long term", "mid-term", "mid term", "when do i need"],
+    "question": "How does my time horizon change my strategy?",
+    "agents": ["Investor Profile Agent", "Risk Agent"],
+    "answer": "Money needed within about 2 years belongs in stable assets because there is no time to recover from a drop. For 3 to 7 years a balanced mix is common. For 10 years or more, stocks usually carry most of the portfolio because short-term swings tend to matter less over time. Each account here is handled by a short, mid or long-term horizon agent for that reason."
+  },
+  {
+    "id": "rebalancing",
+    "keywords": ["rebalanc", "drift", "back to target", "out of balance"],
+    "question": "What is rebalancing?",
+    "agents": ["Risk Agent"],
+    "answer": "Over time winners grow and your mix drifts from its target. Rebalancing sells some of what grew and buys what lagged to restore the target weights. Example: a 60/40 stock/bond portfolio that drifts to 72/28 after a rally carries more risk than intended. Common approaches are rebalancing once or twice a year, or when a weight drifts by more than 5 percentage points."
+  },
+  {
+    "id": "dollar_cost_averaging",
+    "keywords": ["dollar cost", "dollar-cost", "dca", "lump sum", "invest regularly", "all at once"],
+    "question": "Should I invest all at once or gradually?",
+    "agents": ["Investor Profile Agent"],
+    "answer": "Investing a lump sum immediately has historically come out ahead more often than not, because markets rise more often than they fall. Investing a fixed amount on a schedule (dollar-cost averaging) reduces regret and the risk of buying right before a drop. Neither is guaranteed to win. Choose the one you will actually stick with."
+  },
+  {
+    "id": "currency",
+    "keywords": ["currency", "usd", "exchange rate", "fx", "usd/cad", "us dollar"],
+    "question": "How does the USD/CAD exchange rate affect me?",
+    "agents": ["Market Data Agent"],
+    "answer": "U.S. listings like AAPL, SPY or GLD are priced in USD. This platform converts them to CAD using the USD/CAD rate on or before each date, so a stronger U.S. dollar lifts their CAD value and a weaker one reduces it, independent of the asset itself. That means a U.S. holding can rise in USD yet look flat in CAD."
+  },
+  {
+    "id": "gold",
+    "keywords": ["gold", "gld", "safe haven", "hedge", "commodit"],
+    "question": "Why hold gold?",
+    "agents": ["Capital Preservation Strategy Agent", "Risk Agent"],
+    "answer": "Gold (GLD) often moves differently from stocks and can help in inflation scares or market stress, so a small allocation of roughly 5% to 10% is a common diversifier. It pays no income, and it can stay flat or fall for years, so it is a hedge, not a growth engine."
+  },
+  {
+    "id": "home_bias",
+    "keywords": ["home bias", "canadian stock", "only canadian", "tsx", "canada only", "invest in canada"],
+    "question": "Should I only invest in Canada?",
+    "agents": ["Risk Agent", "Balanced Index Agent"],
+    "answer": "Canada is a small share of global markets and is concentrated in banks, energy and materials, with limited technology exposure. Holding only Canadian stocks (for example XIU.TO) leaves you exposed to a few sectors. Adding U.S. and global funds such as SPY spreads that risk, at the cost of currency swings."
+  },
+  {
+    "id": "contribution_room",
+    "keywords": ["contribution room", "contribution limit", "tfsa limit", "rrsp limit", "over-contribut", "overcontribut", "how much can i contribute"],
+    "question": "How much can I contribute to a TFSA or RRSP?",
+    "agents": ["Investor Profile Agent"],
+    "answer": "TFSA room is a yearly dollar amount that accumulates if unused. RRSP room is generally 18% of last year's earned income up to an annual maximum, plus unused room. Over-contributing triggers a penalty of 1% per month on the excess. Check your exact room in your CRA My Account, because limits change each year."
+  },
+  {
+    "id": "rrsp_tax",
+    "keywords": ["tax refund", "deduction", "tax deductible", "tax bracket", "rrsp refund"],
+    "question": "How does the RRSP tax deduction work?",
+    "agents": ["Investor Profile Agent"],
+    "answer": "RRSP contributions reduce your taxable income for the year. Example (illustrative): at a 30% marginal rate, a 5,000 dollar contribution can lower your tax bill by about 1,500 dollars. Withdrawals are taxed as income, so the RRSP generally works best when your tax rate in retirement is lower than today."
+  },
+  {
+    "id": "fhsa",
+    "keywords": ["fhsa", "first home", "down payment", "buy a house", "buy a home"],
+    "question": "How does the FHSA help me buy a first home?",
+    "agents": ["Investor Profile Agent", "Capital Preservation Strategy Agent"],
+    "answer": "The FHSA combines both worlds: contributions are tax-deductible like an RRSP and qualifying withdrawals for a first home are tax-free like a TFSA. If you plan to buy within a few years, a conservative mix is usually more sensible than a stock-heavy one, because a market drop right before purchase could shrink your down payment."
+  },
+  {
+    "id": "capital_gains_tax",
+    "keywords": ["capital gain", "capital loss", "tax on gains", "taxable account", "tax-loss", "tax loss", "gains taxed", "are my gains taxed"],
+    "question": "How are investment gains taxed?",
+    "agents": ["Investor Profile Agent"],
+    "answer": "Inside a TFSA, gains and dividends are not taxed. Inside an RRSP they are deferred until withdrawal. In a non-registered account, only half of a capital gain is generally included in income, while interest is fully taxable. Capital losses can offset gains, which is why investors sometimes sell a loser to reduce their tax bill."
+  },
+  {
+    "id": "withholding_tax",
+    "keywords": ["withholding", "us dividends", "foreign dividend", "foreign tax", "us stocks in", "dividends get taxed", "taxed differently"],
+    "question": "Do U.S. dividends get taxed differently?",
+    "agents": ["Investor Profile Agent"],
+    "answer": "U.S. dividends are generally subject to a 15% withholding tax for Canadians. It is typically waived inside an RRSP for directly held U.S. stocks, but it still applies inside a TFSA. This is one reason people hold U.S. dividend payers in an RRSP and Canadian dividend payers in a TFSA or non-registered account."
+  },
+  {
+    "id": "correlation",
+    "keywords": ["correlat", "move together", "move in the same", "uncorrelated"],
+    "question": "What is correlation and why does it matter?",
+    "agents": ["Risk Agent"],
+    "answer": "Correlation measures how two assets move together, from -1 (opposite) to +1 (in lockstep). Holding assets with low correlation is what makes diversification work. In a crisis, correlations among stocks often jump toward 1, so five tech stocks can fall together even though they look like separate holdings."
+  },
+  {
+    "id": "risk_adjusted",
+    "keywords": ["sharpe", "risk-adjusted", "risk adjusted", "return per unit", "better return for the risk", "compare returns", "across strategies"],
+    "question": "How do I compare returns fairly across strategies?",
+    "agents": ["Risk Agent"],
+    "answer": "Comparing raw returns ignores how bumpy the ride was. The Sharpe ratio divides excess return by volatility. Illustratively, a strategy earning 12% with 20% volatility has a lower ratio than one earning 9% with 10% volatility, so the second may be the better deal per unit of risk. It still uses past data and says nothing about the future."
+  },
+  {
+    "id": "drawdown_recovery",
+    "keywords": ["recovery", "recover", "bounce back", "how long to get back", "break even"],
+    "question": "How long does it take to recover from a loss?",
+    "agents": ["Risk Agent"],
+    "answer": "Losses are harder to undo than they look: a 20% drop needs a 25% gain to break even, and a 50% drop needs a 100% gain. Recovery time varies widely. Diversified stock portfolios have historically recovered from major drops in a few years, while concentrated positions sometimes never did."
+  },
+  {
+    "id": "beta",
+    "keywords": ["beta", "market sensitivity", "more volatile than the market", "defensive"],
+    "question": "What does beta mean?",
+    "agents": ["Risk Agent"],
+    "answer": "Beta compares an asset's moves to the overall market. A beta of 1.0 moves with the market, 1.3 tends to move about 30% more, and 0.6 about 40% less. High-beta names like TSLA and NVDA amplify market swings, while defensive holdings like PG, JNJ and FTS.TO usually soften them."
+  },
+  {
+    "id": "emergency_fund",
+    "keywords": ["emergency", "rainy day", "cash buffer", "job loss", "savings first"],
+    "question": "Should I build an emergency fund first?",
+    "agents": ["Investor Profile Agent", "Capital Preservation Strategy Agent"],
+    "answer": "A common guideline is 3 to 6 months of essential expenses in cash or very short-term holdings before taking investment risk. It prevents you from having to sell stocks at a bad time to cover an unexpected bill. ZST.TO is an example of a very short-term bond fund, but only a savings account is truly stable."
+  },
+  {
+    "id": "risk_tolerance",
+    "keywords": ["risk tolerance", "risk profile", "how much risk", "comfortable with", "risk level", "risk label"],
+    "question": "How do I know how much risk I can take?",
+    "agents": ["Investor Profile Agent", "Risk Agent"],
+    "answer": "Risk has two sides: your ability to take risk (time horizon, income stability, savings) and your willingness (how you would react to a 20% drop). Your risk label combines both. If a large loss would make you sell in a panic, pick a lower risk level, because locking in losses is the most common mistake."
+  },
+  {
+    "id": "past_performance",
+    "keywords": ["backtest", "past performance", "historical", "forecast", "predict", "will it go up"],
+    "question": "Can past performance predict future returns?",
+    "agents": ["Explainability Agent", "Risk Agent"],
+    "answer": "No. Backtests describe what happened in a specific window, here roughly the last three years of the starter data, and that window can include unusual conditions. They are useful for comparing strategies under the same history, but they ignore future shocks, fees, taxes and trading costs. Treat every figure as an observation, not a forecast."
+  },
+  {
+    "id": "how_calculated",
+    "keywords": ["how do you calculate", "where does the data", "data source", "deterministic", "lambda", "how are numbers", "can i trust", "numbers come from"],
+    "question": "Where do the numbers come from?",
+    "agents": ["Market Data Agent", "Explainability Agent"],
+    "answer": "Every financial figure is computed by a deterministic AWS Lambda from versioned datasets in Amazon S3, with file checksums verified before use. The language model only explains already-verified evidence and is blocked from creating numbers of its own. Each answer lists its sources so you can see where it came from."
+  },
+  {
+    "id": "governance",
+    "keywords": ["guardrail", "governance", "why can't", "why cant", "not allowed", "position limit", "cap on", "refuse or cap", "system sometimes refuse"],
+    "question": "Why does the system sometimes refuse or cap a request?",
+    "agents": ["Governance Agent"],
+    "answer": "The Governance Agent applies fixed rules before anything is approved: for example, capping high-risk positions like crypto, rejecting weights that do not add up, and refusing requests with too little data. These checks are deterministic, so the same request always gets the same decision, and a refusal comes with the reason."
+  },
+  {
+    "id": "stock_picking",
+    "keywords": ["stock picking", "individual stock", "pick stocks", "single stock", "best stock", "which stock"],
+    "question": "Is it better to pick stocks or buy an index?",
+    "agents": ["Risk Agent", "Balanced Index Agent"],
+    "answer": "Picking individual stocks adds company-specific risk: one bad earnings report can drop a holding 20% or more in a day. Broad index funds spread that risk across hundreds of companies. Many investors hold an index core and keep a small share, often under 10% to 20%, for individual picks."
+  },
+  {
+    "id": "stagflation",
+    "keywords": ["stagflation", "high inflation and", "slow growth"],
+    "question": "What is stagflation?",
+    "agents": ["Macro Signal Agent"],
+    "answer": "Stagflation is slow economic growth combined with high inflation and rising unemployment. It is hard on portfolios because stocks struggle and bonds lose value as rates rise to fight inflation. Real assets such as gold and energy companies have sometimes held up better, though no asset reliably protects in every episode."
+  },
+  {
+    "id": "yield_curve",
+    "keywords": ["yield curve", "inverted", "inversion", "2-year", "10-year"],
+    "question": "What is an inverted yield curve?",
+    "agents": ["Macro Signal Agent"],
+    "answer": "Normally longer bonds pay more than shorter ones. When short-term yields rise above long-term yields, the curve is inverted. Historically this has often come before recessions, but with a long and variable delay of months to years, and sometimes without a recession at all. It is a warning light, not a timer."
+  },
+  {
+    "id": "crypto_sizing",
+    "keywords": ["how much crypto", "crypto allocation", "position size", "bitcoin percent", "crypto percent"],
+    "question": "How much crypto is reasonable?",
+    "agents": ["Crypto Agent", "Governance Agent", "Risk Agent"],
+    "answer": "Because BTC-USD and ETH-USD can fall more than 70% in a cycle, position size matters more than the pick. An illustrative guide is 0% for capital preservation, up to about 5% for balanced profiles and up to about 10% for growth profiles with long horizons. The Governance Agent enforces a cap, and only money you can afford to lose should go here."
+  },
+  {
+    "id": "quality_investing",
+    "keywords": ["quality", "profitab", "moat", "strong balance sheet", "durable"],
+    "question": "What is quality investing?",
+    "agents": ["Quality Agent"],
+    "answer": "Quality investing favors companies with consistent profits, low debt and durable advantages, such as CNR.TO, CSU.TO, MSFT or JNJ. These tend to hold up better in downturns than weak-balance-sheet companies, but they are often priced at a premium, so they can lag in sharp speculative rallies."
+  },
+  {
+    "id": "asset_allocation",
+    "keywords": ["asset allocation", "balanced", "60/40", "all-in-one", "target mix", "what mix", "mix of stocks and bonds"],
+    "question": "What is a good mix of stocks and bonds?",
+    "agents": ["Balanced Index Agent", "Investor Profile Agent"],
+    "answer": "A classic balanced mix is 60% stocks and 40% bonds. Illustrative profiles: conservative 30/70, balanced 60/40, growth 80/20 and aggressive 100/0. Your mix matters more than which individual funds you choose, and it should follow your horizon and risk tolerance, not the latest headline."
+  },
+  {
+    "id": "retirement",
+    "keywords": ["retire", "pension", "how much do i need", "nest egg", "4% rule"],
+    "question": "How much do I need to retire?",
+    "agents": ["Long-Term Horizon Agent", "Investor Profile Agent"],
+    "answer": "A common rule of thumb is the 4% rule: you can withdraw about 4% of your portfolio in the first year and adjust for inflation afterward. By that guide, 40,000 dollars of yearly spending needs about 1,000,000 dollars invested. It is an approximation: it ignores taxes, government benefits and different market conditions, so treat it as a starting point."
+  },
+  {
+    "id": "market_timing",
+    "keywords": ["timing the market", "wait for", "sell everything", "correction", "buy the dip", "market is high"],
+    "question": "Should I wait for a better time to invest or sell before a drop?",
+    "agents": ["Risk Agent"],
+    "answer": "Timing the market requires being right twice: when to leave and when to return. Illustratively, missing only the ten best days in a decade can cut total return roughly in half, and those days often occur right next to the worst ones. A steady plan matched to your horizon usually beats trying to predict turns."
+  },
+  {
+    "id": "scope_advice",
+    "keywords": ["advice", "real money", "real trade", "trade for me", "guarantee", "is this legit"],
+    "question": "Is this real financial advice?",
+    "agents": ["Governance Agent", "Explainability Agent"],
+    "answer": "No. PortfolioGuard AI is a simulation for decision support with fictional TFSA and RRSP portfolios. It makes no real trades and does not guarantee outcomes. For personal decisions, speak with a licensed financial advisor."
+  }
+]

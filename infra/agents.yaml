@@ -1,0 +1,187 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: PortfolioGuard AI agents hosted on Amazon Bedrock AgentCore Runtime (code upload, no container)
+
+Metadata:
+  Workshop:
+    Region: us-east-1
+    Note: Separate from the financial-tools stack so the agents can be updated or removed on their own.
+
+Parameters:
+  Environment:
+    Type: String
+    Default: workshop
+    AllowedValues: [workshop, dev, demo, prod]
+  DataBucketName:
+    Type: String
+    Description: Private versioned bucket from the portfolioguard-workshop stack
+  FinancialToolsFunctionName:
+    Type: String
+    Default: portfolioguard-workshop-financial-tools
+  CodeKey:
+    Type: String
+    Default: agents/portfolioguard-agents.zip
+    Description: S3 key of the code package inside the data bucket
+  CodeVersionId:
+    Type: String
+    Description: S3 version of the code package (a new version here updates the agents)
+  DataPrefix:
+    Type: String
+    Default: starter/v1
+  BedrockModelId:
+    Type: String
+    Default: us.amazon.nova-lite-v1:0
+    AllowedValues: [us.amazon.nova-lite-v1:0]
+
+Resources:
+  AgentRuntimeRole:
+    Type: AWS::IAM::Role
+    Properties:
+      Description: Least-privilege execution role for the PortfolioGuard agent runtime
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: bedrock-agentcore.amazonaws.com
+            Action: sts:AssumeRole
+            Condition:
+              StringEquals:
+                aws:SourceAccount: !Ref AWS::AccountId
+              ArnLike:
+                aws:SourceArn: !Sub arn:${AWS::Partition}:bedrock-agentcore:${AWS::Region}:${AWS::AccountId}:*
+      Policies:
+        - PolicyName: RunPortfolioGuardAgents
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Sid: ReadAgentCodeAndReferenceData
+                Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:GetObjectVersion
+                Resource:
+                  - !Sub arn:${AWS::Partition}:s3:::${DataBucketName}/${CodeKey}
+                  - !Sub arn:${AWS::Partition}:s3:::${DataBucketName}/${DataPrefix}/assets_universe.csv
+                  - !Sub arn:${AWS::Partition}:s3:::${DataBucketName}/${DataPrefix}/macro_rates.csv
+              - Sid: ReadAndWriteSelectedInvestor
+                Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:PutObject
+                Resource: !Sub arn:${AWS::Partition}:s3:::${DataBucketName}/personas/*
+              - Sid: ListInvestorPrefixOnly
+                Effect: Allow
+                Action:
+                  - s3:ListBucket
+                Resource: !Sub arn:${AWS::Partition}:s3:::${DataBucketName}
+                Condition:
+                  StringLike:
+                    s3:prefix:
+                      - personas/*
+              - Sid: CallFinancialToolsLambda
+                Effect: Allow
+                Action:
+                  - lambda:InvokeFunction
+                Resource: !Sub arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:${FinancialToolsFunctionName}
+              - Sid: InvokeNovaLiteInferenceProfile
+                Effect: Allow
+                Action:
+                  - bedrock:InvokeModel
+                Resource: !Sub arn:${AWS::Partition}:bedrock:${AWS::Region}:${AWS::AccountId}:inference-profile/${BedrockModelId}
+              - Sid: InvokeNovaLiteDestinationModels
+                Effect: Allow
+                Action:
+                  - bedrock:InvokeModel
+                Resource:
+                  - !Sub arn:${AWS::Partition}:bedrock:us-east-1::foundation-model/amazon.nova-lite-v1:0
+                  - !Sub arn:${AWS::Partition}:bedrock:us-east-2::foundation-model/amazon.nova-lite-v1:0
+                  - !Sub arn:${AWS::Partition}:bedrock:us-west-2::foundation-model/amazon.nova-lite-v1:0
+                Condition:
+                  StringEquals:
+                    bedrock:InferenceProfileArn: !Sub arn:${AWS::Partition}:bedrock:${AWS::Region}:${AWS::AccountId}:inference-profile/${BedrockModelId}
+              - Sid: CreateAgentRuntimeLogGroups
+                Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:DescribeLogGroups
+                Resource: !Sub arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/bedrock-agentcore/runtimes/*
+              - Sid: WriteAgentRuntimeLogs
+                Effect: Allow
+                Action:
+                  - logs:CreateLogStream
+                  - logs:DescribeLogStreams
+                  - logs:PutLogEvents
+                Resource: !Sub arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/bedrock-agentcore/runtimes/*:log-stream:*
+              - Sid: WriteAgentRuntimeMetrics
+                Effect: Allow
+                Action:
+                  - cloudwatch:PutMetricData
+                Resource: "*"
+                Condition:
+                  StringEquals:
+                    cloudwatch:namespace: bedrock-agentcore
+              - Sid: AgentRuntimeTracing
+                Effect: Allow
+                Action:
+                  - xray:PutTraceSegments
+                  - xray:PutTelemetryRecords
+                  - xray:GetSamplingRules
+                  - xray:GetSamplingTargets
+                Resource: "*"
+              - Sid: AgentRuntimeWorkloadIdentity
+                Effect: Allow
+                Action:
+                  - bedrock-agentcore:GetWorkloadAccessToken
+                  - bedrock-agentcore:GetWorkloadAccessTokenForJWT
+                  - bedrock-agentcore:GetWorkloadAccessTokenForUserId
+                Resource:
+                  - !Sub arn:${AWS::Partition}:bedrock-agentcore:${AWS::Region}:${AWS::AccountId}:workload-identity-directory/default
+                  - !Sub arn:${AWS::Partition}:bedrock-agentcore:${AWS::Region}:${AWS::AccountId}:workload-identity-directory/default/workload-identity/*
+      Tags:
+        - Key: Project
+          Value: PortfolioGuardAI
+        - Key: Environment
+          Value: !Ref Environment
+
+  AgentRuntime:
+    Type: AWS::BedrockAgentCore::Runtime
+    Properties:
+      AgentRuntimeName: !Sub portfolioguard_agents_${Environment}
+      Description: Orchestrator, Intake, Market, Classifier and Explainer agents (plus the account and governance agents)
+      RoleArn: !GetAtt AgentRuntimeRole.Arn
+      AgentRuntimeArtifact:
+        CodeConfiguration:
+          Code:
+            S3:
+              Bucket: !Ref DataBucketName
+              Prefix: !Ref CodeKey
+              VersionId: !Ref CodeVersionId
+          Runtime: PYTHON_3_12
+          EntryPoint:
+            - main.py
+      NetworkConfiguration:
+        NetworkMode: PUBLIC
+      ProtocolConfiguration: HTTP
+      EnvironmentVariables:
+        AGENTS: local
+        ENGINE: lambda
+        LLM_ROUTING: "on"
+        EXPLAINER: llm
+        AGENT_RUNTIME_NAME: !Sub portfolioguard_agents_${Environment}
+        LAMBDA_FUNCTION_NAME: !Ref FinancialToolsFunctionName
+        AWS_REGION: !Ref AWS::Region
+        DATA_BUCKET: !Ref DataBucketName
+        DATA_PREFIX: !Ref DataPrefix
+        BEDROCK_MODEL_ID: !Ref BedrockModelId
+      Tags:
+        Project: PortfolioGuardAI
+        Environment: !Ref Environment
+
+Outputs:
+  AgentRuntimeArn:
+    Description: Set as AGENT_RUNTIME_ARN in the backend
+    Value: !GetAtt AgentRuntime.AgentRuntimeArn
+  AgentRuntimeId:
+    Value: !GetAtt AgentRuntime.AgentRuntimeId
+  AgentRuntimeRoleArn:
+    Value: !GetAtt AgentRuntimeRole.Arn

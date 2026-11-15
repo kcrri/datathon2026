@@ -1,0 +1,195 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: PortfolioGuard AI workshop vertical slice in us-east-1
+
+Metadata:
+  Workshop:
+    Region: us-east-1
+    Role: WSParticipantRole/Participant
+    DurationHours: 72
+    BedrockInferenceProfileId: us.amazon.nova-lite-v1:0
+
+Parameters:
+  Environment:
+    Type: String
+    Default: workshop
+    AllowedValues: [workshop, dev, demo, prod]
+  DataPrefix:
+    Type: String
+    Default: starter/v1
+  DatasetId:
+    Type: String
+    Default: alphaforge-starter-v1
+  MarketPrefix:
+    Type: String
+    Default: simulated/v1
+    Description: S3 prefix holding the simulated market prices and headlines
+  MarketDatasetId:
+    Type: String
+    Default: simulated-market-v1
+  BedrockModelId:
+    Type: String
+    Default: us.amazon.nova-lite-v1:0
+    AllowedValues: [us.amazon.nova-lite-v1:0]
+    Description: Bedrock model or inference profile ID used by the financial-tools Lambda
+
+Globals:
+  Function:
+    Runtime: python3.12
+    Architectures: [arm64]
+    Timeout: 120
+    MemorySize: 512
+    Environment:
+      Variables:
+        DATA_PREFIX: !Ref DataPrefix
+        DATASET_ID: !Ref DatasetId
+        MARKET_PREFIX: !Ref MarketPrefix
+        MARKET_DATASET_ID: !Ref MarketDatasetId
+        BEDROCK_MODEL_ID: !Ref BedrockModelId
+    Tags:
+      Project: PortfolioGuardAI
+      Environment: !Ref Environment
+      ManagedBy: AWS-SAM
+
+Resources:
+  DataBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      BucketName: !Sub portfolioguard-${Environment}-data-${AWS::AccountId}-${AWS::Region}
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      VersioningConfiguration:
+        Status: Enabled
+      LifecycleConfiguration:
+        Rules:
+          - Id: DeleteOldNoncurrentVersions
+            Status: Enabled
+            NoncurrentVersionExpiration:
+              NoncurrentDays: 30
+      Tags:
+        - Key: Project
+          Value: PortfolioGuardAI
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: ManagedBy
+          Value: AWS-SAM
+
+  FinancialToolsExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      Description: Least-privilege execution role for PortfolioGuard financial tools and headline scoring
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: ReadVersionedPortfolioGuardDataScoreHeadlinesAndWriteLogs
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Sid: ReadPortfolioGuardDataset
+                Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:GetObjectVersion
+                Resource: !Sub ${DataBucket.Arn}/${DataPrefix}/*
+              - Sid: WritePortfolioGuardLambdaLogs
+                Effect: Allow
+                Action:
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: !Sub >-
+                  arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/portfolioguard-${Environment}-financial-tools:*
+              - Sid: ReadSimulatedMarketData
+                Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:GetObjectVersion
+                Resource: !Sub ${DataBucket.Arn}/${MarketPrefix}/*
+              - Sid: WriteScoredHeadlinesOnly
+                Effect: Allow
+                Action:
+                  - s3:PutObject
+                Resource:
+                  - !Sub ${DataBucket.Arn}/${MarketPrefix}/current/news_scored.csv
+                  - !Sub ${DataBucket.Arn}/${MarketPrefix}/marketchange/news_scored.csv
+              - Sid: InvokeNovaLiteInferenceProfile
+                Effect: Allow
+                Action:
+                  - bedrock:InvokeModel
+                Resource: !Sub >-
+                  arn:${AWS::Partition}:bedrock:${AWS::Region}:${AWS::AccountId}:inference-profile/${BedrockModelId}
+              - Sid: InvokeNovaLiteDestinationModels
+                Effect: Allow
+                Action:
+                  - bedrock:InvokeModel
+                Resource:
+                  - !Sub arn:${AWS::Partition}:bedrock:us-east-1::foundation-model/amazon.nova-lite-v1:0
+                  - !Sub arn:${AWS::Partition}:bedrock:us-east-2::foundation-model/amazon.nova-lite-v1:0
+                  - !Sub arn:${AWS::Partition}:bedrock:us-west-2::foundation-model/amazon.nova-lite-v1:0
+                Condition:
+                  StringEquals:
+                    bedrock:InferenceProfileArn: !Sub >-
+                      arn:${AWS::Partition}:bedrock:${AWS::Region}:${AWS::AccountId}:inference-profile/${BedrockModelId}
+      Tags:
+        - Key: Project
+          Value: PortfolioGuardAI
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: ManagedBy
+          Value: AWS-SAM
+
+  FinancialToolsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub portfolioguard-${Environment}-financial-tools
+      CodeUri: ../lambda/financial_tools/
+      Handler: handler.handler
+      Description: Portfolio and trade calculations plus headline classification, using versioned S3 market data
+      ReservedConcurrentExecutions: 5
+      Role: !GetAtt FinancialToolsExecutionRole.Arn
+      Environment:
+        Variables:
+          DATA_BUCKET: !Ref DataBucket
+
+  FinancialToolsLogGroup:
+    Type: AWS::Logs::LogGroup
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+    Properties:
+      LogGroupName: !Sub /aws/lambda/portfolioguard-${Environment}-financial-tools
+      RetentionInDays: 14
+      Tags:
+        - Key: Project
+          Value: PortfolioGuardAI
+        - Key: Environment
+          Value: !Ref Environment
+
+Outputs:
+  DataBucketName:
+    Description: Private versioned dataset bucket
+    Value: !Ref DataBucket
+  FinancialToolsFunctionName:
+    Description: Lambda function invoked by the backend
+    Value: !Ref FinancialToolsFunction
+  FinancialToolsFunctionArn:
+    Value: !GetAtt FinancialToolsFunction.Arn
+  FinancialToolsExecutionRoleArn:
+    Value: !GetAtt FinancialToolsExecutionRole.Arn
+  BedrockModelId:
+    Value: !Ref BedrockModelId
+  BedrockInferenceProfileArn:
+    Value: !Sub >-
+      arn:${AWS::Partition}:bedrock:${AWS::Region}:${AWS::AccountId}:inference-profile/${BedrockModelId}

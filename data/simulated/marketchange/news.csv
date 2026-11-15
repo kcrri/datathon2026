@@ -1,0 +1,16 @@
+date,ticker,scope,headline,source
+2026-11-13,QQQ,market,Global equities slide as fears over interest rates resurface,SIMULATED
+2026-11-13,NVDA,market,Tech selloff deepens; investors dump high-valuation stocks,SIMULATED
+2026-11-13,SPY,market,Wall Street suffers worst day in months amid broad risk-off mood,SIMULATED
+2026-11-13,SHOP.TO,market,Canadian growth stocks fall in sympathy with global tech rout,SIMULATED
+2026-11-16,QQQ,market,Volatility index jumps as traders rush to cut risk,SIMULATED
+2026-11-17,NVDA,market,"Analysts say selloff looks driven by positioning, not fundamentals",SIMULATED
+2026-11-18,SPY,market,Stocks recover part of losses as selling pressure eases,SIMULATED
+2026-11-13,ENB.TO,company,Regulator orders pipeline operator to halt a segment pending safety review,SIMULATED
+2026-11-16,ENB.TO,company,Pipeline operator warns shutdown could reduce volumes and delay shipments,SIMULATED
+2026-11-17,ENB.TO,company,Rating agency places pipeline operator on review for possible downgrade,SIMULATED
+2026-11-19,ENB.TO,company,Pipeline operator says repairs will take longer than first expected,SIMULATED
+2026-11-13,GLD,market,Gold surges as investors rush into safe havens,SIMULATED
+2026-11-16,GLD,market,Record inflows into gold funds as demand for safe havens soars,SIMULATED
+2026-11-13,ZST.TO,market,Short-term bond ETFs hold steady during equity selloff,SIMULATED
+2026-11-13,PG,company,Consumer staples hold up better than the broader market,SIMULATED
